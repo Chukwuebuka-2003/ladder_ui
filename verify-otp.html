@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Verify OTP - ExpenseAI</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link
+            crossorigin=""
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#13a4ec",
+                            "background-light": "#f6f7f8",
+                            "background-dark": "#101c22",
+                            "foreground-light": "#111827",
+                            "foreground-dark": "#f9fafb",
+                            "card-light": "#ffffff",
+                            "card-dark": "#1f2937",
+                            "subtle-light": "#6b7280",
+                            "subtle-dark": "#9ca3af",
+                            "border-light": "#e5e7eb",
+                            "border-dark": "#374151",
+                        },
+                        fontFamily: {
+                            display: ["Manrope", "sans-serif"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.5rem",
+                            lg: "1rem",
+                            xl: "1.5rem",
+                            full: "9999px",
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body
+        class="font-display bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark"
+    >
+        <div class="flex flex-col min-h-screen">
+            <header class="w-full">
+                <div class="container mx-auto px-6 py-4">
+                    <div
+                        class="flex items-center gap-3 text-foreground-light dark:text-foreground-dark"
+                    >
+                        <svg
+                            class="h-8 w-8 text-primary"
+                            fill="none"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                clip-rule="evenodd"
+                                d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                            ></path>
+                        </svg>
+                        <h1 class="text-2xl font-bold">ExpenseAI</h1>
+                    </div>
+                </div>
+            </header>
+            <main
+                class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+            >
+                <div class="w-full max-w-md space-y-8">
+                    <div class="text-center">
+                        <h2
+                            class="text-3xl font-extrabold text-foreground-light dark:text-foreground-dark"
+                        >
+                            Check your email
+                        </h2>
+                        <p
+                            id="otp-message"
+                            class="mt-2 text-sm text-subtle-light dark:text-subtle-dark"
+                        >
+                            We've sent a 6-digit code to your email address.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-8 shadow-sm rounded-lg space-y-6"
+                    >
+                        <form id="otp-form" class="space-y-6">
+                            <div>
+                                <label class="sr-only" for="otp-code"
+                                    >OTP Code</label
+                                >
+                                <input
+                                    class="relative block w-full appearance-none rounded-md border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark px-3 py-3 text-foreground-light dark:text-foreground-dark placeholder-subtle-light dark:placeholder-subtle-dark focus:z-10 focus:border-primary focus:outline-none focus:ring-primary sm:text-sm"
+                                    id="otp-code"
+                                    name="otp-code"
+                                    placeholder="Enter 6-digit code"
+                                    required
+                                    type="text"
+                                    maxlength="6"
+                                />
+                            </div>
+                            <button
+                                id="otp-button"
+                                class="group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-3 px-4 text-sm font-semibold text-white hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark"
+                                type="submit"
+                            >
+                                Verify Account
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="auth.js?v=1.0.1"></script>
+    </body>
+</html>
