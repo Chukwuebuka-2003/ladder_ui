@@ -1,5 +1,5 @@
 // Base URL for the FastAPI backend
-const API_URL = "http://localhost:8000";
+const API_URL = "https://ladder-ai.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form");
